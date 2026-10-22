@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Novo funcionário | Estúdio</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div id="nav-root"></div>
+  <main class="page-shell">
+    <div class="page-heading"><div><p class="eyebrow">Equipe do estúdio</p><h1>Novo funcionário</h1><p>Crie uma conta para alguém da equipe.</p></div></div>
+    <div id="mensagem" class="alert notice" role="alert"></div>
+    <section class="panel form-panel"><form id="form-cadastro" class="form-grid">
+      <div class="field wide"><label for="nome">Nome</label><input id="nome" maxlength="100" autocomplete="name" required></div>
+      <div class="field wide"><label for="email">E-mail</label><input id="email" type="email" maxlength="150" autocomplete="email" required></div>
+      <div class="field wide"><label for="senha">Senha inicial</label><input id="senha" type="password" minlength="8" maxlength="72" autocomplete="new-password" required><p class="field-help">Mínimo de 8 caracteres.</p></div>
+      <div class="form-actions"><button class="button primary" type="submit">Criar funcionário</button><a class="button secondary" href="dashboard.html">Cancelar</a></div>
+    </form></section>
+  </main>
+  <script src="js/auth.js"></script><script src="js/app.js"></script><script src="js/cadastro.js"></script>
+</body>
+</html>

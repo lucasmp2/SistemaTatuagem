@@ -1,0 +1,12 @@
+# Ambiente virtual — cada aluno cria o seu localmente
+venv/
+
+# Arquivos gerados automaticamente pelo Python
+__pycache__/
+*.pyc
+
+# Variáveis de ambiente (senhas e configurações locais)
+.env
+
+# Arquivos enviados pela API
+backend/uploads/

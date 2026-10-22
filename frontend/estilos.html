@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estilos | Estúdio</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div id="nav-root"></div>
+  <main class="page-shell">
+    <div class="page-heading"><div><p class="eyebrow">Catálogo</p><h1>Estilos</h1><p>Referências que ajudam cada pessoa a encontrar o traço certo.</p></div></div>
+    <div id="mensagem" class="alert notice" role="alert"></div>
+    <section class="panel form-panel"><form id="form-estilo" class="form-grid">
+      <div class="field wide"><label for="descricao">Descrição do estilo</label><input id="descricao" maxlength="50" placeholder="Ex.: Blackwork" required></div>
+      <div class="form-actions"><button id="btn-submit" class="button primary" type="submit">Adicionar estilo</button><button id="btn-cancelar" class="button secondary" type="button" hidden>Cancelar</button></div>
+    </form></section>
+    <section class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Descrição</th><th>Ações</th></tr></thead><tbody id="corpo-tabela"><tr><td colspan="3" class="empty-state">Carregando estilos...</td></tr></tbody></table></div></section>
+  </main>
+  <script src="js/auth.js"></script><script src="js/app.js"></script><script src="js/estilos.js"></script>
+</body>
+</html>

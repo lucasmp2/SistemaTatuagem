@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Senioridade | Estúdio</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div id="nav-root"></div>
+  <main class="page-shell">
+    <div class="page-heading"><div><p class="eyebrow">Equipe</p><h1>Senioridade</h1><p>Níveis de experiência disponíveis para os tatuadores.</p></div></div>
+    <div id="mensagem" class="alert notice" role="alert"></div>
+    <section class="panel form-panel"><form id="form-senioridade" class="form-grid">
+      <div class="field wide"><label for="nome">Nome do nível</label><input id="nome" maxlength="50" placeholder="Ex.: Júnior" required></div>
+      <div class="form-actions"><button id="btn-submit" class="button primary" type="submit">Adicionar nível</button><button id="btn-cancelar" class="button secondary" type="button" hidden>Cancelar</button></div>
+    </form></section>
+    <section class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Nome</th><th>Ações</th></tr></thead><tbody id="corpo-tabela"><tr><td colspan="3" class="empty-state">Carregando níveis...</td></tr></tbody></table></div></section>
+  </main>
+  <script src="js/auth.js"></script><script src="js/app.js"></script><script src="js/senioridade.js"></script>
+</body>
+</html>
