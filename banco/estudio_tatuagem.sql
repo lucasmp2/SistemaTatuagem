@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS cliente (
 
 CREATE TABLE IF NOT EXISTS agendamento (
     idagendamento INT AUTO_INCREMENT PRIMARY KEY,
-    idcliente INT NOT NULL,
+    idcliente INT DEFAULT NULL,
     idtatuador INT NOT NULL,
     dataagendamento DATE NOT NULL,
     horaagendamento TIME NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS agendamento (
     status ENUM('pendente', 'confirmado', 'concluido', 'cancelado')
         NOT NULL DEFAULT 'pendente',
     CONSTRAINT fk_agendamento_cliente FOREIGN KEY (idcliente)
-        REFERENCES cliente(idcliente),
+        REFERENCES cliente(idcliente) ON DELETE SET NULL,
     CONSTRAINT fk_agendamento_tatuador FOREIGN KEY (idtatuador)
         REFERENCES tatuador(idtatuador)
 ) ENGINE=InnoDB;
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS usuario (
     tipo ENUM('admin', 'funcionario', 'cliente') NOT NULL DEFAULT 'funcionario',
     idcliente INT DEFAULT NULL,
     CONSTRAINT fk_usuario_cliente FOREIGN KEY (idcliente)
-        REFERENCES cliente(idcliente)
+        REFERENCES cliente(idcliente) ON DELETE SET NULL
 ) ENGINE=InnoDB;
 
 INSERT IGNORE INTO senioridade (idsenioridade, nome) VALUES

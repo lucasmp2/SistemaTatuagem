@@ -23,7 +23,7 @@ async function listarAgendamentos() {
   try {
     agendamentosCarregados = await jsonDaResposta(await fetchAutenticado(`${API}/agendamentos`))
     corpoAgendamentos.innerHTML = agendamentosCarregados.length ? agendamentosCarregados.map(item => `
-      <tr><td>${item.idagendamento}</td><td>${escaparHtml(item.cliente)}</td><td>${escaparHtml(item.tatuador)}</td>
+      <tr><td>${item.idagendamento}</td><td>${escaparHtml(item.cliente || 'Cliente removido')}</td><td>${escaparHtml(item.tatuador)}</td>
       <td>${escaparHtml(String(item.dataagendamento).slice(0, 10))}</td><td>${escaparHtml(String(item.horaagendamento).slice(0, 5))}</td>
       <td>${item.valortatuagem == null ? '—' : Number(item.valortatuagem).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
       <td><span class="status ${escaparHtml(item.status)}">${escaparHtml(item.status)}</span></td>

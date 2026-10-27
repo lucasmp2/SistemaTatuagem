@@ -11,6 +11,7 @@ Sistema de gestão de estúdio com MySQL, API FastAPI e páginas HTML/CSS/JavaSc
 ## Configuração inicial
 
 1. Inicie o MySQL no XAMPP e importe [banco/estudio_tatuagem.sql](banco/estudio_tatuagem.sql) pelo phpMyAdmin.
+   Se o banco já existia antes desta alteração, importe também [banco/migracao_exclusao_cliente.sql](banco/migracao_exclusao_cliente.sql). Ela permite excluir clientes preservando seus agendamentos e contas, que passam a ficar sem vínculo com o cliente.
 2. No PowerShell, crie e ative o ambiente virtual e instale as dependências:
 
 ```powershell
@@ -53,13 +54,7 @@ Mantenha essa chave e as credenciais reais do banco fora do Git. O `.env` já é
 
 Senha de demonstração para as sete contas: `12345`. Ela foi solicitada para este ambiente local; troque-a antes de expor o sistema à internet. Os hashes bcrypt estão no banco, nunca a senha em texto puro.
 
-Se estiver usando um banco sem essas contas e ainda não houver administrador, crie-o pelo terminal:
-
-```powershell
-python criar_admin.py
-```
-
-O script solicita nome, e-mail e senha sem exibir a senha digitada. O endpoint de cadastro de funcionários exige um administrador; não existe cadastro público de contas da equipe. O cadastro pelo painel exige senha de pelo menos oito caracteres.
+Se estiver usando um banco sem essas contas, importe [banco/estudio_tatuagem.sql](banco/estudio_tatuagem.sql) para cadastrá-las. O endpoint de cadastro de funcionários exige um administrador; não existe cadastro público de contas da equipe. O cadastro pelo painel exige senha de pelo menos oito caracteres.
 
 ## Executar
 
