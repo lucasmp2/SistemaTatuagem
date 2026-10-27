@@ -49,7 +49,7 @@ def listar_agendamentos():
     agendamentos = consultar("""
         SELECT a.*, c.nome AS cliente, t.nometatuador AS tatuador
         FROM agendamento a
-        JOIN cliente c ON a.idcliente=c.idcliente
+        LEFT JOIN cliente c ON a.idcliente=c.idcliente
         JOIN tatuador t ON a.idtatuador=t.idtatuador
         ORDER BY a.dataagendamento, a.horaagendamento
     """)
